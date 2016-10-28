@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreateDance : MonoBehaviour {
 
@@ -12,23 +13,28 @@ public class CreateDance : MonoBehaviour {
 	public float wiggle_frequency;
 	public float wiggle_spacing;
 
-	/*public float turn_radius;
-	public float turn_amplitude;
-	public float turn_frequency;
-	public float turn_spacing;*/
 
 	public Material wiggle1_material;
-	//public Material turn1_material;
-	//public Material wiggle2_material;
-	//public Material turn2_material;
+
+	Action onComplete;
+
+	int currentStep = 0;
 
 
 
+	/// <summary>
+	/// Begins the dance and setup oncomplete callback
+	/// </summary>
+	/// <param name="completeCallback">Complete callback.</param>
+	public void BeginDance(Action completeCallback) {
 
+		onComplete = completeCallback;
+	}
 
-	// Use this for initialization
-	void Start () {
-		//wiggle 1
+	/// <summary>
+	/// Draws the dance.
+	/// </summary>
+	public void DrawDance() {
 		for (int i = 0; i < bubbles.Length; i++) {
 
 			bubbles[ i ] = GameObject.CreatePrimitive (PrimitiveType.Sphere);
@@ -38,58 +44,29 @@ public class CreateDance : MonoBehaviour {
 			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;
 			bubbles[ i ].GetComponent<MeshRenderer>().sharedMaterial = wiggle1_material;
 
+			bubbles[i].GetComponent<OnCollision>().onDestoyed = () => {
+				NextStep();
+			};
+
 		}
-		//turn 1
-		/*for (int i = bubbles.Length / 2; i < bubbles.Length; i++) {
-
-			bubbles[ i ] = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			bubbles[ i ].transform.position = new Vector3 ( turn_amplitude * Mathf.Sin( turn_frequency * i ), dance_height, turn_spacing * ( i - bubbles.Length / 2 ));
-			bubbles[ i ].transform.localScale = new Vector3 ( turn_radius, turn_radius, turn_radius );
-			bubbles[ i ].AddComponent<OnCollision> ();
-			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;
-			bubbles[ i ].GetComponent<MeshRenderer>().sharedMaterial = turn1_material;
-	
-		}
-			
-		//wiggle 2
-		/*(for (int i = 0; i < (int)( number_of_spheres / 2 ); i++) {
-			GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			sphere.transform.position = new Vector3 (  -1 * wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
-			sphere.transform.localScale = new Vector3 ( wiggle_radius, wiggle_radius, wiggle_radius );
-			sphere.AddComponent<OnCollision> ();
-			sphere.GetComponent<SphereCollider> ().isTrigger = true;
-			sphere.GetComponent<MeshRenderer>().sharedMaterial = wiggle2_material;
-		}
-
-		//turn 2
-		for (int i = 0; i < (int)( number_of_spheres / 2 ); i++) {
-			GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			sphere.transform.position = new Vector3 ( -1 * turn_amplitude * Mathf.Sin( turn_frequency * i ), dance_height, turn_spacing * i);
-			sphere.transform.localScale = new Vector3 ( turn_radius, turn_radius, turn_radius );
-			sphere.AddComponent<OnCollision> ();
-			sphere.GetComponent<SphereCollider> ().isTrigger = true;
-			sphere.GetComponent<MeshRenderer>().sharedMaterial = turn2_material;
-		}*/
-
-
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
+	/// <summary>
+	/// Nexts the step in the dance
+	/// </summary>
+	public void NextStep() {
 
-		/*for (int i = 0; i < bubbles.Length / 2; i++) {
+		Destroy (bubbles [currentStep]);
+		currentStep++;
 
-			bubbles[ i ].transform.position = new Vector3 ( wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
-			bubbles[ i ].transform.localScale = new Vector3 ( wiggle_radius, wiggle_radius, wiggle_radius );
-	
+		Debug.Log ("step " + currentStep);
+		// completed part
+		if (currentStep == bubbles.Length) {
+
+			if (onComplete != null)
+				onComplete ();
 		}
-
-		for (int i = bubbles.Length / 2; i < bubbles.Length; i++) {
-
-			bubbles [i].transform.position = new Vector3 (turn_amplitude * Mathf.Sin (turn_frequency * i), dance_height, turn_spacing * (i - bubbles.Length / 2));
-			bubbles [i].transform.localScale = new Vector3 (turn_radius, turn_radius, turn_radius);
-		}*/
-	
 	}
+
+
 }

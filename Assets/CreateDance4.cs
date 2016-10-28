@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreateDance4 : MonoBehaviour {
 
@@ -15,16 +16,32 @@ public class CreateDance4 : MonoBehaviour {
 	public float turn_frequency;
 	public float turn_spacing;
 
-	//public Material wiggle1_material;
-	//public Material turn1_material;
-	//public Material wiggle2_material;
 	public Material turn2_material;
 
 
-
+	Action onComplete;
+	int currentStep = 15;
 
 	// Use this for initialization
 	void Start () {
+		
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+
+	/// <summary>
+	/// Begins the dance and setup oncomplete callback
+	/// </summary>
+	/// <param name="completeCallback">Complete callback.</param>
+	public void BeginDance(Action completeCallback) {
+
+		onComplete = completeCallback;
+	}
+
+	public void DrawDance() {
 		//turn 1
 		for (int i = 0; i < bubbles.Length; i++) {
 
@@ -34,17 +51,27 @@ public class CreateDance4 : MonoBehaviour {
 			bubbles[ i ].AddComponent<OnCollision> ();
 			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;
 			bubbles[ i ].GetComponent<MeshRenderer>().sharedMaterial = turn2_material;
+			bubbles[i].GetComponent<OnCollision>().onDestoyed = () => {
+				NextStep();
+			};
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
 
-		/*for (int i = 0; i < bubbles.Length; i++) {
+	/// <summary>
+	/// Nexts the step in the dance
+	/// </summary>
+	public void NextStep() {
 
-			bubbles [i].transform.position = new Vector3 (turn_amplitude * Mathf.Sin (turn_frequency * i ), dance_height, turn_spacing * i);
-			bubbles [i].transform.localScale = new Vector3 (turn_radius, turn_radius, turn_radius);
-		}*/
+		Destroy (bubbles [currentStep]);
+		currentStep--;
 
+	
+		// completed part
+		if (currentStep == 0) {
+
+			if (onComplete != null)
+				onComplete ();
+		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreateDance3 : MonoBehaviour {
 
@@ -13,26 +14,61 @@ public class CreateDance3 : MonoBehaviour {
 	public Material wiggle2_material;
 
 
-
+	Action onComplete;
+	int currentStep = 0;
 
 	// Use this for initialization
 	void Start () {
-			
-		//wiggle 2
-		for (int i = 0; i < bubbles.Length ; i++) {
-			GameObject sphere = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			sphere.transform.position = new Vector3 (  -1 * wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
-			sphere.transform.localScale = new Vector3 ( wiggle_radius, wiggle_radius, wiggle_radius );
-			sphere.AddComponent<OnCollision> ();
-			sphere.GetComponent<SphereCollider> ().isTrigger = true;
-			sphere.GetComponent<MeshRenderer>().sharedMaterial = wiggle2_material;
-		}
-			
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	/// <summary>
+	/// Begins the dance and setup oncomplete callback
+	/// </summary>
+	/// <param name="completeCallback">Complete callback.</param>
+	public void BeginDance(Action completeCallback) {
+
+		onComplete = completeCallback;
+	}
+
+
+	public void DrawDance() {
+
+		//wiggle 2
+		for (int i = 0; i < bubbles.Length ; i++) {
+			bubbles[ i ] = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+			bubbles[ i ].transform.position = new Vector3 (  -1 * wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
+			bubbles[ i ].transform.localScale = new Vector3 ( wiggle_radius, wiggle_radius, wiggle_radius );
+			bubbles[ i ].AddComponent<OnCollision> ();
+			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;
+			bubbles[ i ].GetComponent<MeshRenderer>().sharedMaterial = wiggle2_material;
+			bubbles[i].GetComponent<OnCollision>().onDestoyed = () => {
+				NextStep();
+			};
+		}
+	}
+
+
+	/// <summary>
+	/// Nexts the step in the dance
+	/// </summary>
+	public void NextStep() {
+
+		Destroy (bubbles [currentStep]);
+		currentStep++;
+
+		Debug.Log ("step " + currentStep);
+		// completed part
+		if (currentStep == bubbles.Length) {
+
+			if (onComplete != null)
+				onComplete ();
+		}
 	}
 }
