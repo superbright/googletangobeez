@@ -20,6 +20,7 @@ public class CreateDance4 : MonoBehaviour {
 
 
 	Action onComplete;
+	Action playSound;
 	int currentStep = 15;
 
 	// Use this for initialization
@@ -36,9 +37,10 @@ public class CreateDance4 : MonoBehaviour {
 	/// Begins the dance and setup oncomplete callback
 	/// </summary>
 	/// <param name="completeCallback">Complete callback.</param>
-	public void BeginDance(Action completeCallback) {
+	public void BeginDance(Action completeCallback,Action soundPlayer) {
 
 		onComplete = completeCallback;
+		playSound = soundPlayer;
 	}
 
 	public void DrawDance() {
@@ -63,6 +65,7 @@ public class CreateDance4 : MonoBehaviour {
 	/// </summary>
 	public void NextStep() {
 
+		playSound ();
 		Destroy (bubbles [currentStep]);
 		currentStep--;
 

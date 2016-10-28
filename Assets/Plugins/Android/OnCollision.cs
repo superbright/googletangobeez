@@ -7,8 +7,8 @@ public class OnCollision : MonoBehaviour {
 	public Action onDestoyed;
 
 	void OnTriggerEnter( Collider collision ) {
-		print ("enter called");
-		print (gameObject.name);
+		//print ("enter called");
+		//print (gameObject.name);
 
 		Handheld.Vibrate ();
 		if (onDestoyed != null)

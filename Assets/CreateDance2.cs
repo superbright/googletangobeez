@@ -17,6 +17,7 @@ public class CreateDance2 : MonoBehaviour {
 
 
 	Action onComplete;
+	Action playSound;
 	int currentStep = 15;
 
 
@@ -36,9 +37,10 @@ public class CreateDance2 : MonoBehaviour {
 	/// Begins the dance and setup oncomplete callback
 	/// </summary>
 	/// <param name="completeCallback">Complete callback.</param>
-	public void BeginDance(Action completeCallback) {
+	public void BeginDance(Action completeCallback,Action soundPlayer) {
 
 		onComplete = completeCallback;
+		playSound = soundPlayer;
 	}
 
 
@@ -62,6 +64,7 @@ public class CreateDance2 : MonoBehaviour {
 	/// </summary>
 	public void NextStep() {
 
+		playSound ();
 		Destroy (bubbles [currentStep]);
 		currentStep--;
 

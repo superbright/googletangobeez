@@ -19,14 +19,15 @@ public class AntennaAnimator : MonoBehaviour {
 		if (!isAnimating && !rb.IsSleeping ()) {
 			isAnimating = true;
 			if (music != null)
-				music.Play ();
+				//music.Play ();
+				music.volume = 0.5f;
 			AnimateEars ();
 		}
 
 		if(isAnimating && rb.IsSleeping()) {
 			isAnimating = false;
 			if (music != null)
-				music.Pause ();
+				music.volume = 0.2f;
 			StopAnimating();
 		}
 	

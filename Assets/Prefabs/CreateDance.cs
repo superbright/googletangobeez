@@ -17,6 +17,7 @@ public class CreateDance : MonoBehaviour {
 	public Material wiggle1_material;
 
 	Action onComplete;
+	Action playSound;
 
 	int currentStep = 0;
 
@@ -26,9 +27,10 @@ public class CreateDance : MonoBehaviour {
 	/// Begins the dance and setup oncomplete callback
 	/// </summary>
 	/// <param name="completeCallback">Complete callback.</param>
-	public void BeginDance(Action completeCallback) {
+	public void BeginDance(Action completeCallback,Action soundPlayer) {
 
 		onComplete = completeCallback;
+		playSound = soundPlayer;
 	}
 
 	/// <summary>
@@ -56,10 +58,12 @@ public class CreateDance : MonoBehaviour {
 	/// </summary>
 	public void NextStep() {
 
+		playSound ();
 		Destroy (bubbles [currentStep]);
+
 		currentStep++;
 
-		Debug.Log ("step " + currentStep);
+		//Debug.Log ("step " + currentStep);
 		// completed part
 		if (currentStep == bubbles.Length) {
 

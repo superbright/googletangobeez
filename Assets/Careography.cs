@@ -10,8 +10,12 @@ public class Careography : MonoBehaviour {
 
 	int currentPart = 0;
 
+	public AudioPlayer audioplayer;
+
+
 	// Use this for initialization
 	void Start () {
+
 		NextPart ();
 	}
 
@@ -24,12 +28,27 @@ public class Careography : MonoBehaviour {
 	
 	}
 
+	void PlayRandomClip() {
+		int clipid = Random.Range (0, 2);
+		switch (clipid) {
+		case 0:
+			audioplayer.PlayClip ("impact1");
+			break;
+		case 1:
+			audioplayer.PlayClip ("impact2");
+			break;
+		case 2:
+			audioplayer.PlayClip ("impact3");
+			break;
+		}
+
+	}
+
 	/// <summary>
 	/// Change the current part to dance and call the function setting it p
 	/// </summary>
 	void NextPart() {
 
-		Debug.Log ("NEXT");
 		currentPart++;
 		switch (currentPart) {
 		case 1:
@@ -64,7 +83,9 @@ public class Careography : MonoBehaviour {
 		part1.DrawDance ();
 		part1.BeginDance( 
 			() => { 
-				NextPart();
+			NextPart();
+			},() => { 
+					PlayRandomClip();
 			});
 	}
 
@@ -73,7 +94,9 @@ public class Careography : MonoBehaviour {
 		part2.BeginDance( 
 			() => { 
 				NextPart();
-			});
+				},() => { 
+					PlayRandomClip();
+				});
 	}
 
 	public void StartPart3() {
@@ -81,7 +104,9 @@ public class Careography : MonoBehaviour {
 		part3.BeginDance( 
 			() => { 
 				NextPart();
-			});
+				},() => { 
+					PlayRandomClip();
+				});
 	}
 
 	public void StartPart4() {
@@ -89,6 +114,8 @@ public class Careography : MonoBehaviour {
 		part4.BeginDance( 
 			() => { 
 				NextPart();
-			});
+				},() => { 
+					PlayRandomClip();
+				});
 	}
 }
