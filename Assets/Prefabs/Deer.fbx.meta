@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 3bda625de22a2465998f8904d1f6c9e4
+timeCreated: 1477601921
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Bone002
+    100004: Bone003
+    100006: Bone004
+    100008: Bone005
+    100010: Bone006
+    100012: Bone009
+    100014: Bone010
+    100016: Bone011
+    100018: Bone012
+    100020: Bone013
+    100022: Bone016
+    100024: Bone017
+    100026: Bone021
+    100028: Bone022
+    100030: Bone033
+    100032: Bone034
+    100034: Bone035
+    100036: Bone036
+    100038: Bone037
+    100040: Bone038
+    100042: Bone039
+    100044: Bone040
+    100046: Bone041
+    100048: Bone042
+    100050: Bone045
+    100052: Bone046
+    100054: Bone047
+    100056: Bone048
+    100058: Bone049
+    100060: Bone050
+    100062: Bone052
+    100064: Bone053
+    100066: Bone054
+    100068: Bone055
+    100070: Bone056
+    100072: Bone057
+    100074: Bone058
+    100076: Bone059
+    100078: Bone060
+    100080: Bone061
+    100082: Bone062
+    100084: Bone063
+    100086: Bone064
+    100088: Bone065
+    100090: Cinema4D_Editor
+    100092: //RootNode
+    100094: deer_1
+    100096: Head
+    100098: Neck
+    100100: Pelvis_L
+    100102: Pelvis_R
+    100104: RibCage
+    100106: Root
+    100108: Scapula_L
+    100110: Scapula_R
+    100112: Spine
+    100114: Tale
+    400000: Base
+    400002: Bone002
+    400004: Bone003
+    400006: Bone004
+    400008: Bone005
+    400010: Bone006
+    400012: Bone009
+    400014: Bone010
+    400016: Bone011
+    400018: Bone012
+    400020: Bone013
+    400022: Bone016
+    400024: Bone017
+    400026: Bone021
+    400028: Bone022
+    400030: Bone033
+    400032: Bone034
+    400034: Bone035
+    400036: Bone036
+    400038: Bone037
+    400040: Bone038
+    400042: Bone039
+    400044: Bone040
+    400046: Bone041
+    400048: Bone042
+    400050: Bone045
+    400052: Bone046
+    400054: Bone047
+    400056: Bone048
+    400058: Bone049
+    400060: Bone050
+    400062: Bone052
+    400064: Bone053
+    400066: Bone054
+    400068: Bone055
+    400070: Bone056
+    400072: Bone057
+    400074: Bone058
+    400076: Bone059
+    400078: Bone060
+    400080: Bone061
+    400082: Bone062
+    400084: Bone063
+    400086: Bone064
+    400088: Bone065
+    400090: Cinema4D_Editor
+    400092: //RootNode
+    400094: deer_1
+    400096: Head
+    400098: Neck
+    400100: Pelvis_L
+    400102: Pelvis_R
+    400104: RibCage
+    400106: Root
+    400108: Scapula_L
+    400110: Scapula_R
+    400112: Spine
+    400114: Tale
+    4300000: deer_1
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: deer_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

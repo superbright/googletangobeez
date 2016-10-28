@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 53b13534e508f4800af8e1d90926b242
+timeCreated: 1477601921
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Beak_Lower
+    100002: Beak_LowerController
+    100004: Beak_Upper
+    100006: Beak_UpperController
+    100008: //RootNode
+    100010: Bone007
+    100012: Bone020
+    100014: Bone020_mirrored_
+    100016: Bone021
+    100018: Bone021_mirrored_
+    100020: Bone022
+    100022: Bone022_mirrored_
+    100024: Bone025
+    100026: Bone025_mirrored_
+    100028: Bone026
+    100030: Bone026_mirrored_
+    100032: Bone029
+    100034: Bone029_mirrored_
+    100036: Caudal
+    100038: CaudalController
+    100040: Cinema4D_Editor
+    100042: Claw_L_mirrored_
+    100044: Claw_LController
+    100046: Claw_R
+    100048: Claw_RController
+    100050: Crow
+    100052: Crow_2
+    100054: Digit1_L_mirrored_
+    100056: Digit1_R
+    100058: Digit2_L_mirrored_
+    100060: Digit2_R
+    100062: Digit3_L_mirrored_
+    100064: Digit3_R
+    100066: Digit4_L_mirrored_
+    100068: Digit4_R
+    100070: Feather_L_mirrored_
+    100072: Feather_L_mirrored__2
+    100074: Feather_R
+    100076: Feather_R_2
+    100078: FeatherController
+    100080: FeatherSliderController
+    100082: Femur_L_mirrored_
+    100084: Femur_R
+    100086: Femur_RController
+    100088: GeneralController
+    100090: Head
+    100092: HeadController
+    100094: Humerus_L_mirrored_
+    100096: Humerus_R
+    100098: IK_Chain001
+    100100: IK_Chain002
+    100102: IK_Chain003
+    100104: IK_Chain004
+    100106: IK_Chain005
+    100108: IK_Chain006
+    100110: Ilium
+    100112: IliumController
+    100114: Metacarpal_L_mirrored_
+    100116: Metacarpal_R
+    100118: Neck
+    100120: NeckController
+    100122: Phalange_L_mirrored_
+    100124: Phalange_R
+    100126: Point001
+    100128: Scapula
+    100130: Tail
+    100132: Tarsometatarsus_L_mirrored_
+    100134: Tarsometatarsus_R
+    100136: Tibiotarsus_L_mirrored_
+    100138: Tibiotarsus_R
+    100140: Ulna_L_mirrored_
+    100142: Ulna_R
+    400000: Beak_Lower
+    400002: Beak_LowerController
+    400004: Beak_Upper
+    400006: Beak_UpperController
+    400008: //RootNode
+    400010: Bone007
+    400012: Bone020
+    400014: Bone020_mirrored_
+    400016: Bone021
+    400018: Bone021_mirrored_
+    400020: Bone022
+    400022: Bone022_mirrored_
+    400024: Bone025
+    400026: Bone025_mirrored_
+    400028: Bone026
+    400030: Bone026_mirrored_
+    400032: Bone029
+    400034: Bone029_mirrored_
+    400036: Caudal
+    400038: CaudalController
+    400040: Cinema4D_Editor
+    400042: Claw_L_mirrored_
+    400044: Claw_LController
+    400046: Claw_R
+    400048: Claw_RController
+    400050: Crow
+    400052: Crow_2
+    400054: Digit1_L_mirrored_
+    400056: Digit1_R
+    400058: Digit2_L_mirrored_
+    400060: Digit2_R
+    400062: Digit3_L_mirrored_
+    400064: Digit3_R
+    400066: Digit4_L_mirrored_
+    400068: Digit4_R
+    400070: Feather_L_mirrored_
+    400072: Feather_L_mirrored__2
+    400074: Feather_R
+    400076: Feather_R_2
+    400078: FeatherController
+    400080: FeatherSliderController
+    400082: Femur_L_mirrored_
+    400084: Femur_R
+    400086: Femur_RController
+    400088: GeneralController
+    400090: Head
+    400092: HeadController
+    400094: Humerus_L_mirrored_
+    400096: Humerus_R
+    400098: IK_Chain001
+    400100: IK_Chain002
+    400102: IK_Chain003
+    400104: IK_Chain004
+    400106: IK_Chain005
+    400108: IK_Chain006
+    400110: Ilium
+    400112: IliumController
+    400114: Metacarpal_L_mirrored_
+    400116: Metacarpal_R
+    400118: Neck
+    400120: NeckController
+    400122: Phalange_L_mirrored_
+    400124: Phalange_R
+    400126: Point001
+    400128: Scapula
+    400130: Tail
+    400132: Tarsometatarsus_L_mirrored_
+    400134: Tarsometatarsus_R
+    400136: Tibiotarsus_L_mirrored_
+    400138: Tibiotarsus_R
+    400140: Ulna_L_mirrored_
+    400142: Ulna_R
+    4300000: Crow_2
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Crow_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
