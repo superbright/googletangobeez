@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HoneySuckle : MonoBehaviour {
 
+	public AudioSource pollen_music;
 	float timeLeft = 5.0f;
 	bool isSucking = false;
 	public GameLogic logic;
@@ -21,6 +22,9 @@ public class HoneySuckle : MonoBehaviour {
 				logic.IncreamentProgressBar ();
 				timeLeft = 5.0f;
 			}
+			if (pollen_music != null)
+				//music.Play ();
+				pollen_music.volume = 0.5f;
 		}
 	}
 
@@ -42,6 +46,9 @@ public class HoneySuckle : MonoBehaviour {
 		} else if(collider.gameObject.name == "flower") {
 			isSucking = false;
 			collider.gameObject.GetComponent<ParticleSystem> ().Stop ();
+			if (pollen_music != null)
+				//music.Play ();
+				pollen_music.volume = 0.0f;
 		}
 
 	}
