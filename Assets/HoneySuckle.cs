@@ -28,7 +28,7 @@ public class HoneySuckle : MonoBehaviour {
 		//ContactPoint contact = collider.contacts[0];
 		if (collider.gameObject.name == "hive") {
 			logic.ResetProgressBar ();
-		} else {
+		} else if(collider.gameObject.name == "flower") {
 			isSucking = true;
 			collider.gameObject.GetComponent<ParticleSystem> ().Play ();
 		}
@@ -39,7 +39,7 @@ public class HoneySuckle : MonoBehaviour {
 		//ContactPoint contact = collider.contacts[0];
 		if (collider.gameObject.name == "hive") {
 
-		} else {
+		} else if(collider.gameObject.name == "flower") {
 			isSucking = false;
 			collider.gameObject.GetComponent<ParticleSystem> ().Stop ();
 		}
