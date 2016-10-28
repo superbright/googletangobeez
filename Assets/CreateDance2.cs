@@ -44,11 +44,12 @@ public class CreateDance2 : MonoBehaviour {
 	}
 
 
-	public void DrawDance() {
+	public void DrawDance(Transform parent) {
 		for (int i = 0; i < bubbles.Length; i++) {
 
 			bubbles[ i ] = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			bubbles[ i ].transform.position = new Vector3 ( turn_amplitude * Mathf.Sin( turn_frequency * i ), dance_height, turn_spacing * ( i ));
+			bubbles [i].transform.parent = parent;
+			bubbles[ i ].transform.localPosition = new Vector3 ( turn_amplitude * Mathf.Sin( turn_frequency * i ), dance_height, turn_spacing * ( i ));
 			bubbles[ i ].transform.localScale = new Vector3 ( turn_radius, turn_radius, turn_radius );
 			bubbles[ i ].AddComponent<OnCollision> ();
 			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;

@@ -41,7 +41,6 @@ public class Careography : MonoBehaviour {
 			audioplayer.PlayClip ("impact3");
 			break;
 		}
-
 	}
 
 	/// <summary>
@@ -80,7 +79,7 @@ public class Careography : MonoBehaviour {
 	/// </summary>
 	public void StartPart1() {
 		
-		part1.DrawDance ();
+		part1.DrawDance (transform);
 		part1.BeginDance( 
 			() => { 
 			NextPart();
@@ -90,7 +89,7 @@ public class Careography : MonoBehaviour {
 	}
 
 	public void StartPart2() {
-		part2.DrawDance ();
+		part2.DrawDance (transform);
 		part2.BeginDance( 
 			() => { 
 				NextPart();
@@ -100,7 +99,7 @@ public class Careography : MonoBehaviour {
 	}
 
 	public void StartPart3() {
-		part3.DrawDance ();
+		part3.DrawDance (transform);
 		part3.BeginDance( 
 			() => { 
 				NextPart();
@@ -110,7 +109,7 @@ public class Careography : MonoBehaviour {
 	}
 
 	public void StartPart4() {
-		part4.DrawDance ();
+		part4.DrawDance (transform);
 		part4.BeginDance( 
 			() => { 
 				NextPart();

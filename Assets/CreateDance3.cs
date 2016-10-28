@@ -39,12 +39,13 @@ public class CreateDance3 : MonoBehaviour {
 		playSound = soundPlayer;
 	}
 
-	public void DrawDance() {
+	public void DrawDance(Transform parent) {
 
 		//wiggle 2
 		for (int i = 0; i < bubbles.Length ; i++) {
 			bubbles[ i ] = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			bubbles[ i ].transform.position = new Vector3 (  -1 * wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
+			bubbles [i].transform.parent = parent;
+			bubbles[ i ].transform.localPosition = new Vector3 (  -1 * wiggle_amplitude * Mathf.Sin( wiggle_frequency * i ), dance_height, wiggle_spacing * i);
 			bubbles[ i ].transform.localScale = new Vector3 ( wiggle_radius, wiggle_radius, wiggle_radius );
 			bubbles[ i ].AddComponent<OnCollision> ();
 			bubbles[ i ].GetComponent<SphereCollider> ().isTrigger = true;
